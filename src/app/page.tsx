@@ -15,12 +15,14 @@ export default function Home() {
     return (
       <div className="w-full h-screen flex flex-col justify-center items-center">
         <div className="w-44 h-44 relative mb-4">
-          <Image
-            src={session.user?.image as string}
-            fill
-            alt=""
-            className="object-cover rounded-full"
-          />
+          {session.user?.image && (
+            <Image
+              src={session.user?.image as string}
+              fill
+              alt=""
+              className="object-cover rounded-full"
+            />
+          )}
         </div>
         <p className="text-2xl mb-2">
           Welcome <span className="font-bold">{session.user?.name}</span>.

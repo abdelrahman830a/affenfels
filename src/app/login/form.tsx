@@ -64,7 +64,6 @@ export default function LoginForm() {
       Toast({ title: "Login Successful" });
     } catch (error: any) {
       console.error("Login Failed:", error);
-      Toast({ title: "Login Failed" });
     }
   };
 
