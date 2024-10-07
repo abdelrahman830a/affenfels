@@ -4,10 +4,13 @@
 // importing necessary functions
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   // extracting data from usesession as session
   const { data: session } = useSession();
+
+  console.log({ session });
 
   // checking if sessions exists
   if (session) {
@@ -40,6 +43,12 @@ export default function Home() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
       <p className="text-2xl mb-2">Not Signed In</p>
+      <Link href="/login" className="text-blue-600 py-2">
+        Login with credentials
+      </Link>
+      <Link href="/register" className="text-blue-600 py-2">
+        Register with credentials
+      </Link>
       <button
         className="bg-blue-600 py-2 px-6 rounded-md mb-2"
         onClick={() => signIn("google")}>
