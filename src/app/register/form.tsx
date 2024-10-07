@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,7 +15,6 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Toast } from "@/components/ui/toast";
 import { useRouter } from "next/navigation";
 
 const FormSchema = z.object({
@@ -63,7 +63,7 @@ export default function FormPage() {
   };
 
   return (
-    <Form {...form} className="w-2/3 space-y-6">
+    <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}

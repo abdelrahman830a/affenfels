@@ -30,7 +30,7 @@ const handler = NextAuth({
                 email: {},
                 password: {},
             },
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 const response = await sql`
           SELECT * FROM users WHERE email=${credentials?.email}
         `;
